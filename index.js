@@ -34,6 +34,7 @@ for (const filePath of templates) {
     .replace('{{moduleName}}', moduleName)
     .replace('{{moduleNamePascal}}', moduleNamePascal);
   const relativeDest = filePath
+    .replace(/_/g, '')
     .replace(__dirname, '')
     .replace(`/${templateDir}/`, '');
   const dest = path.join(process.cwd(), moduleName, relativeDest);
