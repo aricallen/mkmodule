@@ -1,4 +1,7 @@
 {
+  "bin": {
+    "make-module": "./index.js"
+  },
   "name": "make-module",
   "version": "1.0.0",
   "main": "index.js",
@@ -10,6 +13,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "change-case": "^3.0.2"
+    "change-case": "^3.0.2",
+    "recursive-readdir-sync": "^1.0.6"
   }
 }
