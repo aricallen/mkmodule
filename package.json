@@ -1,8 +1,8 @@
 {
   "bin": {
-    "make-module": "./index.js"
+    "mkmodule": "./index.js"
   },
-  "name": "@solstice.sebastian/make-module",
+  "name": "@solstice.sebastian/mkmodule",
   "version": "1.0.1",
   "main": "index.js",
   "scripts": {
