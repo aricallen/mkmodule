@@ -1,0 +1,30 @@
+{
+  "name": "@solstice.sebastian/{{moduleName}}",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "sketch": "node local/sketch.js",
+    "test": "tape-watch tests/*.js tests/**/*.js | faucet"
+  },
+  "devDependencies": {
+    "eslint": "*",
+    "eslint-config-airbnb-base": "*",
+    "eslint-config-prettier": "*",
+    "eslint-config-standard": "*",
+    "eslint-plugin-import": "*",
+    "eslint-plugin-node": "*",
+    "eslint-plugin-prettier": "*",
+    "eslint-plugin-promise": "*",
+    "eslint-plugin-standard": "*",
+    "faucet": "*",
+    "nodemon": "*",
+    "prettier": "*",
+    "tape": "*",
+    "tape-watch": "*"
+  },
+  "author": "solstice.sebastian",
+  "license": "MIT"
+}

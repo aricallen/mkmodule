@@ -1,0 +1,6 @@
+node_modules/
+local/
+.env*
+.vscode/
+yarn.lock
+yarn-error.log
