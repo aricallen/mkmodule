@@ -2,7 +2,7 @@
   "bin": {
     "make-module": "./index.js"
   },
-  "name": "make-module",
+  "name": "@solstice.sebastian/make-module",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {

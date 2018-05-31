@@ -21,7 +21,7 @@ for (const filePath of templates) {
     .replace('{{moduleName}}', moduleName)
     .replace('{{moduleNamePascal}}', moduleNamePascal);
   const relativeDest = filePath.replace(__dirname, '');
-  const dest = path.join(process.cwd(), relativeDest);
+  const dest = path.join(process.cwd(), changeCase.paramCase(moduleName), relativeDest);
   console.log(`writing ${relativeDest} -> ${dest}`);
   // fs.writeFileSync(dest, scrubbed, { encoding: 'utf8' });
 }
