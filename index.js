@@ -11,13 +11,24 @@ const shelljs = require('shelljs');
 const { promisify } = require('util');
 const recursiveReadDirSync = require('recursive-readdir-sync');
 const changeCase = require('change-case');
+const args = require('minimist')(process.argv)
+
+const usage = `
+  Usage: mkdir --name=<module-name> [--scope=scope]
+`;
 
 const templateDir = 'templates';
 const templates = recursiveReadDirSync(path.resolve(__dirname, `./${templateDir}`));
 
-const moduleName = changeCase.paramCase(process.argv[2]);
+if (args.name === undefined) {
+  console.log(usage);
+  process.exit(1);
+}
+
+const moduleName = changeCase.paramCase(args.name);
 const moduleNamePascal = changeCase.pascalCase(moduleName);
 const moduleDir = path.join(process.cwd(), moduleName);
+const { scope } = args;
 
 // create module dir
 if (fs.existsSync(moduleDir) === false) {
@@ -31,6 +42,7 @@ if (fs.existsSync(path.join(moduleDir, '.vscode')) === false) {
 for (const templateFilePath of templates) {
   const content = fs.readFileSync(templateFilePath, { encoding: 'utf8' });
   const scrubbed = content
+    .replace('{{scope}}', scope || '')
     .replace('{{moduleName}}', moduleName)
     .replace('{{moduleNamePascal}}', moduleNamePascal);
   const relativeDest = templateFilePath

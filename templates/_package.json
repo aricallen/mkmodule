@@ -1,5 +1,5 @@
 {
-  "name": "@solstice.sebastian/test-module",
+  "name": "{{scope}}{{moduleName}}",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
