@@ -14,7 +14,7 @@ const changeCase = require('change-case');
 const args = require('minimist')(process.argv)
 
 const usage = `
-  Usage: mkdir --name=<module-name> [--scope=scope]
+  Usage: mkmodule --name=<module-name> [--scope=scope]
 `;
 
 const templateDir = 'templates';
