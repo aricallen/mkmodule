@@ -28,15 +28,15 @@ if (fs.existsSync(path.join(moduleDir, '.vscode')) === false) {
   fs.mkdirSync(path.join(moduleDir, '.vscode'));
 }
 
-for (const filePath of templates) {
-  const content = fs.readFileSync(filePath, { encoding: 'utf8' });
+for (const templateFilePath of templates) {
+  const content = fs.readFileSync(templateFilePath, { encoding: 'utf8' });
   const scrubbed = content
     .replace('{{moduleName}}', moduleName)
     .replace('{{moduleNamePascal}}', moduleNamePascal);
-  const relativeDest = filePath
-    .replace(/_/g, '')
+  const relativeDest = templateFilePath
     .replace(__dirname, '')
-    .replace(`/${templateDir}/`, '');
+    .replace(`/${templateDir}/`, '')
+    .replace(/_/g, '');
   const dest = path.join(process.cwd(), moduleName, relativeDest);
   console.log(`writing ${relativeDest} -> ${dest}`);
   fs.writeFileSync(dest, scrubbed, { encoding: 'utf8' });
