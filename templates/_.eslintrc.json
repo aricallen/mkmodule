@@ -16,6 +16,7 @@
   "rules": {
     "no-console": 0,
     "no-bitwise": "off",
+    "no-useless-construcotr": "off",
     "global-require": "off",
     "prettier/prettier": [
       "error",
