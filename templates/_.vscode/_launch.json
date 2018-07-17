@@ -5,7 +5,10 @@
       "type": "node",
       "request": "launch",
       "name": "sketch",
-      "program": "${workspaceFolder}/local/sketch.js"
+      "program": "${workspaceFolder}/local/sketch.js",
+      "skipFiles": [
+        "<node_internals>/**/*.js"
+      ]
     },
     {
       "type": "node",
@@ -20,13 +23,19 @@
       "type": "node",
       "request": "launch",
       "name": "server",
-      "program": "${workspaceFolder}/server.js"
+      "program": "${workspaceFolder}/server.js",
+      "skipFiles": [
+        "<node_internals>/**/*.js"
+      ]
     },
     {
       "type": "node",
       "request": "launch",
       "name": "index",
-      "program": "${workspaceFolder}/index.js"
+      "program": "${workspaceFolder}/index.js",
+      "skipFiles": [
+        "<node_internals>/**/*.js"
+      ]
     }
   ]
 }
