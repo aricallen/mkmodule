@@ -25,6 +25,9 @@
     "tape": "*",
     "tape-watch": "*"
   },
+  "engines": {
+    "node": ">=10.4.1"
+  },
   "author": "solstice.sebastian",
   "license": "MIT"
 }
