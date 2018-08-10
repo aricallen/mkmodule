@@ -3,7 +3,7 @@
     "mkmodule": "./index.js"
   },
   "name": "@solstice.sebastian/mkmodule",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
