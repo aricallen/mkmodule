@@ -8,10 +8,7 @@
   },
   "parserOptions": {
     "ecmaVersion": 2017,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "experimentalObjectRestSpread": true
-    }
+    "sourceType": "module"
   },
   "rules": {
     "no-console": 0,
@@ -32,7 +29,7 @@
     "no-underscore-dangle": 0,
     "class-methods-use-this": "off",
     "arrow-body-style": "off",
-    "no-param-reassign": "off",
+    "no-param-reassign": ["error", { "props": false }],
     "no-await-in-loop": "off",
     "no-restricted-syntax": "off"
   }
