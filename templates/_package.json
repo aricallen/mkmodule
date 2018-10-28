@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js",
-    "sketch": "node local/sketch.js",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
     "test": "tape-watch tests/*.js tests/**/*.js | faucet"
   },
   "devDependencies": {
