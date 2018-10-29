@@ -1,7 +1,6 @@
 const args = require('minimist')(process.argv);
 const { dependencies, typescript, devDependencies } = require('./deps.js');
 
-
 const getDependencyStr = () => {
   const commands = [];
   if (dependencies.length > 0) {
@@ -42,4 +41,11 @@ const transformPackageJson = (content, filePath) => {
   return JSON.stringify(data, null, 2);
 };
 
-module.exports = { getDependencyStr, transformPackageJson };
+const transformTemplates = (templates) => {
+  if (!args.typescript) {
+    return templates.filter((t) => t.includes('tsconfig.json') === false);
+  }
+  return templates;
+}
+
+module.exports = { getDependencyStr, transformPackageJson, transformTemplates };

@@ -7,7 +7,7 @@ const { promisify } = require('util');
 const recursiveReadDirSync = require('recursive-readdir-sync');
 const changeCase = require('change-case');
 const args = require('minimist')(process.argv)
-const { transformPackageJson, getDependencyStr } = require('./helpers.js');
+const { transformPackageJson, getDependencyStr, transformTemplates } = require('./helpers.js');
 
 const usage = `
   Usage: mkmodule --name=<module-name> [--scope=scope] [--typescript=true]
@@ -35,7 +35,7 @@ if (fs.existsSync(path.join(moduleDir, '.vscode')) === false) {
   fs.mkdirSync(path.join(moduleDir, '.vscode'));
 }
 
-for (const templateFilePath of templates) {
+for (const templateFilePath of transformTemplates(templates)) {
   const content = fs.readFileSync(templateFilePath, { encoding: 'utf8' });
   const scrubbed = content
     .replace('{{scope}}', scope !== undefined ? `@${scope.replace('@', '')}/` : '')
