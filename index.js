@@ -1,10 +1,5 @@
 #!/usr/bin/env node
 
-/**
- * usage:
- * node make-module moduleName echo pwd
- */
-
 const fs = require('fs');
 const path = require('path');
 const shelljs = require('shelljs');
@@ -12,9 +7,10 @@ const { promisify } = require('util');
 const recursiveReadDirSync = require('recursive-readdir-sync');
 const changeCase = require('change-case');
 const args = require('minimist')(process.argv)
+const { transformPackageJson, getDependencyStr } = require('./helpers.js');
 
 const usage = `
-  Usage: mkmodule --name=<module-name> [--scope=scope]
+  Usage: mkmodule --name=<module-name> [--scope=scope] [--typescript=true]
 `;
 
 const templateDir = 'templates';
@@ -51,7 +47,7 @@ for (const templateFilePath of templates) {
     .replace(/_/g, '');
   const dest = path.join(process.cwd(), moduleName, relativeDest);
   console.log(`writing ${relativeDest} -> ${dest}`);
-  fs.writeFileSync(dest, scrubbed, { encoding: 'utf8' });
+  fs.writeFileSync(dest, transformPackageJson(scrubbed, templateFilePath), { encoding: 'utf8' });
 }
 
 // cd into the module dir
@@ -60,8 +56,9 @@ shelljs.cd(modulePath);
 
 const exec = promisify(shelljs.exec);
 
+const dependencyStr = getDependencyStr();
 // install packages
-exec('yarn install')
+exec(dependencyStr)
   .then(() => exec('git init'))
   .then(() => exec('git add .'))
   .then(() => exec('git commit -am "initial commit"'));

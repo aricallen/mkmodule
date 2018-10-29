@@ -8,24 +8,15 @@
     "dev": "nodemon index.js",
     "test": "tape-watch tests/*.js tests/**/*.js | faucet"
   },
-  "devDependencies": {
-    "eslint": "*",
-    "eslint-config-airbnb-base": "*",
-    "eslint-config-prettier": "*",
-    "eslint-config-standard": "*",
-    "eslint-plugin-import": "*",
-    "eslint-plugin-node": "*",
-    "eslint-plugin-prettier": "*",
-    "eslint-plugin-promise": "*",
-    "eslint-plugin-standard": "*",
-    "faucet": "*",
-    "nodemon": "*",
-    "prettier": "*",
-    "tape": "*",
-    "tape-watch": "*"
-  },
+  "devDependencies": {},
+  "dependencies": {},
   "engines": {
     "node": ">=10.4.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run build"
+    }
   },
   "author": "solstice.sebastian",
   "license": "MIT"
