@@ -4,7 +4,7 @@
     "mkmodule": "./index.js"
   },
   "name": "@solstice.sebastian/mkmodule",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "main": "index.js",
   "keywords": [],
   "author": "",
