@@ -1,7 +1,9 @@
 {
-  "bin": "mkmodule",
+  "bin": {
+    "mkmodule": "./index.js"
+  },
   "name": "@solstice.sebastian/mkmodule",
-  "version": "1.0.20",
+  "version": "1.1.0",
   "main": "index.js",
   "keywords": [],
   "author": "",
