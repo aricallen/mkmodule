@@ -38,6 +38,7 @@ const transformPackageJson = (content, filePath) => {
     },
   };
   data.scripts.build = 'tsc';
+  data.scripts.dev = 'tsc --watch';
   return JSON.stringify(data, null, 2);
 };
 
