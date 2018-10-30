@@ -22,7 +22,8 @@ module.exports = {
       '@types/node',
       'husky',
       'tslib',
-      'typescript'
+      'typescript',
+      'ts-node'
     ]
   }
 };

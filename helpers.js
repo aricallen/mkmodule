@@ -24,7 +24,7 @@ const getDependencyStr = () => {
   return commands.join(' && ');
 };
 
-const transformPackageJson = (content, filePath) => {
+const trasnformContent = (content, filePath) => {
   if (!args.typescript || !filePath.includes('package.json')) {
     return content;
   }
@@ -42,11 +42,11 @@ const transformPackageJson = (content, filePath) => {
   return JSON.stringify(data, null, 2);
 };
 
-const transformTemplates = (templates) => {
+const transformTemplateList = (templates) => {
   if (!args.typescript) {
     return templates.filter((t) => t.includes('tsconfig.json') === false);
   }
   return templates;
 }
 
-module.exports = { getDependencyStr, transformPackageJson, transformTemplates };
+module.exports = { getDependencyStr, trasnformContent, transformTemplateList };
