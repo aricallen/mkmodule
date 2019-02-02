@@ -15,7 +15,7 @@ Files include:
 ## Usage
 
 ```sh
-yarn global add @solstice.sebastian/mkmodule
+yarn global add @<scope>/mkmodule
 cd <path/to/parent/dir>
 mkdir <module-name>
 ```

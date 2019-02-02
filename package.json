@@ -3,7 +3,7 @@
   "bin": {
     "mkmodule": "./index.js"
   },
-  "name": "@solstice.sebastian/mkmodule",
+  "name": "@aricallen/mkmodule",
   "version": "1.1.2",
   "main": "index.js",
   "keywords": [],
