@@ -10,10 +10,8 @@ module.exports = {
     'eslint-plugin-promise',
     'eslint-plugin-standard',
     'faucet',
-    'nodemon',
     'prettier',
     'tape',
-    'tape-watch'
   ],
   dependencies: [],
   typescript: {
