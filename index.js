@@ -10,7 +10,7 @@ const args = require('minimist')(process.argv)
 const { transformContent, getDependencyStr, transformTemplates } = require('./helpers.js');
 
 const usage = `
-  Usage: mkmodule --name=<module-name> [--scope=scope] [--typescript=true]
+  Usage: mkmodule --name=<module-name> [--scope=scope]
 `;
 
 const templateDir = 'templates';
@@ -29,10 +29,6 @@ const { scope } = args;
 // create module dir
 if (fs.existsSync(moduleDir) === false) {
   fs.mkdirSync(moduleDir);
-}
-// create vscode dir
-if (fs.existsSync(path.join(moduleDir, '.vscode')) === false) {
-  fs.mkdirSync(path.join(moduleDir, '.vscode'));
 }
 
 for (const templateFilePath of transformTemplateList(templates)) {

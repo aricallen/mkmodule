@@ -4,19 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
-    "test": "tape-watch tests/*.js tests/**/*.js | faucet"
+    "start": "node index.js"
   },
   "devDependencies": {},
   "dependencies": {},
   "engines": {
-    "node": ">=10.4.1"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run build"
-    }
+    "node": ">=14"
   },
   "author": "{{scope}}",
   "license": "MIT"

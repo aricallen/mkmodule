@@ -4,3 +4,5 @@ local/
 .env*
 .vscode/
 yarn-error.log
+data/
+logs/

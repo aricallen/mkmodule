@@ -9,19 +9,7 @@ module.exports = {
     'eslint-plugin-prettier',
     'eslint-plugin-promise',
     'eslint-plugin-standard',
-    'faucet',
     'prettier',
-    'tape',
   ],
   dependencies: [],
-  typescript: {
-    dependencies: [],
-    devDependencies: [
-      '@types/node',
-      'husky',
-      'tslib',
-      'typescript',
-      'ts-node'
-    ]
-  }
 };
