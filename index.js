@@ -7,7 +7,7 @@ const { promisify } = require('util');
 const recursiveReadDirSync = require('recursive-readdir-sync');
 const changeCase = require('change-case');
 const args = require('minimist')(process.argv)
-const { transformContent, getDependencyStr, transformTemplates } = require('./helpers.js');
+const { getDependencyStr } = require('./helpers.js');
 
 const usage = `
   Usage: mkmodule --name=<module-name> [--scope=scope]
@@ -31,7 +31,7 @@ if (fs.existsSync(moduleDir) === false) {
   fs.mkdirSync(moduleDir);
 }
 
-for (const templateFilePath of transformTemplateList(templates)) {
+for (const templateFilePath of templates) {
   const content = fs.readFileSync(templateFilePath, { encoding: 'utf8' });
   const scrubbed = content
     .replace('{{scope}}', scope !== undefined ? `@${scope.replace('@', '')}/` : '')
