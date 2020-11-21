@@ -9,7 +9,7 @@
   "devDependencies": {},
   "dependencies": {},
   "engines": {
-    "node": ">=10.4.1"
+    "node": ">=14"
   },
   "author": "{{scope}}",
   "license": "MIT"
