@@ -1,4 +1,3 @@
-const args = require('minimist')(process.argv);
 const { dependencies, devDependencies } = require('./deps.js');
 
 const getDependencyStr = () => {
@@ -13,4 +12,4 @@ const getDependencyStr = () => {
   return commands.join(' && ');
 };
 
-module.exports = { getDependencyStr, trasnformContent, transformTemplateList };
+module.exports = { getDependencyStr };

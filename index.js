@@ -6,7 +6,7 @@ const shelljs = require('shelljs');
 const { promisify } = require('util');
 const recursiveReadDirSync = require('recursive-readdir-sync');
 const changeCase = require('change-case');
-const args = require('minimist')(process.argv)
+const args = require('minimist')(process.argv);
 const { getDependencyStr } = require('./helpers.js');
 
 const usage = `
@@ -43,7 +43,7 @@ for (const templateFilePath of templates) {
     .replace(/_/g, '');
   const dest = path.join(process.cwd(), moduleName, relativeDest);
   console.log(`writing ${relativeDest} -> ${dest}`);
-  fs.writeFileSync(dest, transformContent(scrubbed, templateFilePath), { encoding: 'utf8' });
+  fs.writeFileSync(dest, scrubbed, { encoding: 'utf8' });
 }
 
 // cd into the module dir
