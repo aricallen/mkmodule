@@ -34,13 +34,13 @@ if (fs.existsSync(moduleDir) === false) {
 for (const templateFilePath of templates) {
   const content = fs.readFileSync(templateFilePath, { encoding: 'utf8' });
   const scrubbed = content
-    .replace('{{scope}}', scope !== undefined ? `@${scope.replace('@', '')}/` : '')
-    .replace('{{moduleName}}', moduleName)
-    .replace('{{moduleNamePascal}}', moduleNamePascal);
+    .replaceAll('{{scope}}', scope !== undefined ? `@${scope.replaceAll('@', '')}/` : '')
+    .replaceAll('{{moduleName}}', moduleName)
+    .replaceAll('{{moduleNamePascal}}', moduleNamePascal);
   const relativeDest = templateFilePath
-    .replace(__dirname, '')
-    .replace(`/${templateDir}/`, '')
-    .replace(/_/g, '');
+    .replaceAll(__dirname, '')
+    .replaceAll(`/${templateDir}/`, '')
+    .replaceAll(/_/g, '');
   const dest = path.join(process.cwd(), moduleName, relativeDest);
   console.log(`writing ${relativeDest} -> ${dest}`);
   fs.writeFileSync(dest, scrubbed, { encoding: 'utf8' });
